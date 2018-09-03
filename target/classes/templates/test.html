@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>测试Thymeleaf的使用</title>
+</head>
+<body>
+<h3 th:text="${name}"></h3>
+
+<hr/>
+<!-- 用户添加的功能必须得到权限验证后才会生效，才会在页面加载出来 -->
+<div shiro:hasPermission="user:add">
+进入用户添加功能： <a href="add">用户添加</a><br/>
+</div>
+<!-- 用户更新的功能必须得到权限验证后才会生效，才会在页面加载出来 -->
+<div shiro:hasPermission="user:update">
+进入用户更新功能： <a href="update">用户更新</a><br/>
+</div>
+
+<a href="toLogin">登录</a>
+</body>
+</html>
